@@ -18,6 +18,13 @@
 
 
 def exclude_em(list1, num1=None):
+    """
+    Given an input `list`, exclude an input integer `n`, and it's following element.  If no second argument is passed, remove the first two elements by default. 
+    
+    :param list1: list
+    :param num1: integer
+    :return: list1
+    """
     if num1:
         num1_position = list1.index(num1)
         num2_position = num1_position + 2
@@ -30,6 +37,13 @@ def exclude_em(list1, num1=None):
 
 
 def double(list1, list2):
+    """
+    Given two `list`s of `int`s, multiply numbers located at the same index by one another and append them to a new list. If the result is `0`, append `-1` instead of `0`.  finally, return the result `list`.
+    
+    :param list1: list
+    :param list2: list
+    :return: result
+    """
     result = []
     for pos1, pos2 in zip(list1, list2):
         multi = pos1 * pos2
@@ -44,6 +58,13 @@ def double(list1, list2):
 
 
 def punch_in(list_one, list_two, location):
+    """
+    Given two `list`s and an `int` (three args), insert the elements of a list into the first list at the nth position.
+    :param list_one: list
+    :param list_two: list
+    :param location: integer
+    :return: result
+    """
     result = list()
     for index, num in enumerate(list_one):
         if index == location:
