@@ -31,11 +31,13 @@ def generator():
     predictor = random.choice(predictions)
     print(predictor)
 
+    print('✰✰✰✰✰✰✰✰✰✰✰✰✰✰' * 7)
     play_again = input("Do you want to know more about your future? Y/yes or N/no ").lower()
     if play_again == 'y':
         input("Type in your question?")
         generator()
     else:
+        print('✰✰✰✰✰✰✰✰✰✰✰✰✰✰' * 7)
         print("Your future looks marvelous, keep smiling!")
         quit()
 
@@ -45,14 +47,24 @@ def welcome():
     Print a welcome screen for the user.
     :return: 
     """
+    # design  🌟 🌠 ✰
+
+    print('✰✰✰✰✰✰✰✰✰✰✰✰✰✰' * 7)
+
     want_to_play = input('Welcome to your future!  Do you want to know your future?  >>Y/yes or N/no>').lower()
+
+    #print('✰✰✰✰✰✰✰✰✰✰✰✰✰✰' * 7)
+
+
     while True:
         if want_to_play == 'y':
+            print('✰✰✰✰✰✰✰✰✰✰✰✰✰✰' * 7)
             my_question = input("Type in your question. >>").lower()
 
             generator()
 
         else:
+            print('✰✰✰✰✰✰✰✰✰✰✰✰✰✰' * 7)
             print("Oh, you hurt my feelings!  Good bye!")
 
             break
