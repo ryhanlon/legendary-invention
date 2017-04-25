@@ -17,7 +17,7 @@
 ['Kieran', 'Prasch', 'Instructor', 'Alfonzo', 'Ward', 'Student', 'Fin', 'Balnik', 'Student']
 
 """
-from intertools import chain
+from itertools import chain
 
 
 def long_names(names, num):
