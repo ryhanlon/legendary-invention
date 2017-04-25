@@ -6,25 +6,41 @@ This file is written by Rebecca Y. Hanlon.
 def converter():
 
     input_distance = int(input("Enter distance:  "))
-    input_unit = input("Enter units (meter, kilometer, feet, mile):  ")
-    target_units = input("Enter target units (meter, kilometer, feet, mile):  ")
+    input_unit = input("Enter units (m, km, ft, mi):  ")
+    target_unit = input("Enter target units (m, km, ft, mi):  ")
 
-    # convert
+    # convert units to meter
     if input_unit == 'meter' or input_unit == 'm':
-        distance = input_distance * 1
+        distance = input_distance * 1       # m to m
+        print(distance)
 
     elif input_unit == 'kilometer' or input_unit == 'km':
-        unit = input_unit * .001
-
-        #distance = input_distance * .001
+        distance = input_distance * 1000   # km to m
+        print(distance)
 
     elif input_unit == 'mile' or input_unit == 'mi':
-        unit = input_unit * .0006
+        distance = input_distance * 1609    # mi to m
+        print(distance)
 
-        #distance = input_distance * .0006
+    elif input_unit == 'feet' or input_unit == 'ft':
+        distance = input_distance * .3    # ft to m
+        print(distance)
+
+    # convert input units to target units
+    if target_unit == 'meter' or target_unit == 'm':
+        convert_dist = distance * 1       # m to m
+        print(f"{input_distance} {input_unit} is {convert_dist} m")
+
+    elif target_unit == 'kilometer' or target_unit == 'km':
+        convert_dist = distance * .001  # m to km
+        print(f"{input_distance} {input_unit} is {convert_dist} km")
+
+    elif target_unit == 'mile' or target_unit == 'mi':
+        convert_dist = distance * .0006    # m to mi
+        print(f"{input_distance} {input_unit} is {convert_dist} mi")
+    elif target_unit == 'feet' or target_unit == 'ft':
+        convert_dist = distance * 3.3    # m to ft
+        print(f"{input_distance} {input_unit} is {convert_dist} ft")
 
 
-
-    1 meter = 3 feet
-    1 meter = .001 kilometer
-    1 meter = .0006 mile
+converter()

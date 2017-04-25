@@ -9,7 +9,7 @@ def generator():
     
     :return: 
     """
-    guess = int(input("Welcome to the Guess my Secret Number game. I'm thinking of a number, can you guess it?  You will get 6 guesses, now guess a number  between 1 and 100. ➜ "))
+    guess = int(input("Welcome to the Guess my Secret Number game. I'm thinking of a number, can you guess it?  You will get 12 guesses, now guess a number  between 1 and 100. ➜ "))
     print('☘ ☘ ☘ ☘ ☘ ☘ ☘ ☘ ' * 4)
 
     secret_number = random.randint(1, 100)
@@ -25,6 +25,7 @@ def generator():
         elif guess < secret_number:
             guess = int(input(f"{guess} is too low.  Try again and guess a higher number. ➜ "))
 
+
         elif guess == secret_number and  num_guesses <= 2:
             print(f"Excellent! You guessed my secret number {secret_number} in {num_guesses} guesses.")
             break
@@ -39,7 +40,7 @@ def generator():
 
     else:
         print("You'll do better next time!")
-        quit()
+        #quit()
 
 generator()
 
