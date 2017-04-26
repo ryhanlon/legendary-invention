@@ -3,18 +3,22 @@ This file is written by Rebecca Y. Hanlon.
 
 """
 
+# catch input errors, refactor, add additional units
+
 def converter():
 
     input_distance = int(input("Enter distance:  "))
     input_unit = input("Enter units (m, km, ft, mi):  ")
     target_unit = input("Enter target units (m, km, ft, mi):  ")
+    m_to_meters = input_unit == 'meter' or input_unit == 'm'
+    km_to meters = input_unit == 'kilometer' or input_unit == 'km'
 
     # convert units to meter
-    if input_unit == 'meter' or input_unit == 'm':
+    if to_meters:
         distance = input_distance * 1       # m to m
         print(distance)
 
-    elif input_unit == 'kilometer' or input_unit == 'km':
+    elif km_to meters:
         distance = input_distance * 1000   # km to m
         print(distance)
 
