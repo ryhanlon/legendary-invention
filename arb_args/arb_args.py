@@ -18,13 +18,22 @@ Entries: 17
 
 
 def arb(*cookies):
-
+    """
+    Function to see number of args.
+    :param cookies: group of args
+    :return: string
+    """
     num_args = len(cookies)
 
     print(f"The {num_args} args are: {cookies}")
 
 
 def stats(*fudge):
+    """
+    Use built-in functions, and some math with args
+    :param fudge: args
+    :return: string
+    """
     sum_of_fudge = sum(fudge)
     max_of_fudge = max(fudge)
     min_of_fudge = min(fudge)
