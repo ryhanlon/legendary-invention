@@ -4,26 +4,6 @@ Use a combination of python string methods and regular expressions.
 
 Write, test, and refactor as you go.
 
->>> scrub_numbers('Be9autiful9 i4s be2tter th4an ug42ly')
-'Beautiful is better than ugly.'
-
->>> gentle_clean('Explicit_is-better_than -implicit')
-'Explicit is better than implicit.'
-
->>> clean_data('  42Simple-is_better_than-compl9ex   ')
-'Simple is better than complex.'
-
->>> some_scrubber('F l a t   i s   b e t t e r   t h a n   n e s t e d . ')
-'Flat is better than nested.'
-
->>> mr_clean('Sparse is better than dense')
-' S p a r s e   i s   b e t t e r   t h a n   d e n s e '
-
->>> ms_clean('Readability counts')
-'R9y c4s'
-
->>> strong_cleaner('Err@#%$ors sho@#$@#$uld nev1!$#@er pass sile&I&&*(ntly')
-'Errors should never pass silently.'
 
 >>> extracto('1S2pe3cia4l ca5ses ar6en't sp7ecial en8ough to b9reak the r0ules.')
 45
@@ -41,6 +21,9 @@ import re
 def scrub_numbers(dirty_text: str):
     """
     Removing numbers from text.  Used RegEx '/d+' to remove numbers.
+    
+    >>> scrub_numbers('Be9autiful9 i4s be2tter th4an ug42ly')
+    'Beautiful is better than ugly.'
     
     :param dirty_text: string
     :return: string
@@ -75,6 +58,9 @@ def gentle_clean(dirty_text: str):
     """
     Remove '_', '-', ' ', from text.  Used RegEx '[-_]' to remove '_-'.
 
+    >>> gentle_clean('Explicit_is-better_than -implicit')
+    'Explicit is better than implicit.'
+    
     :param dirty_text: string
     :return: string
     """
@@ -92,6 +78,9 @@ def clean_data(dirty_text):
     """
     Remove numbers, '-', '_', using RegEx.
     
+    >>> clean_data('  42Simple-is_better_than-compl9ex   ')
+    'Simple is better than complex.'
+
     :param dirty_text: string
     :return: string
     """
@@ -108,6 +97,15 @@ def clean_data(dirty_text):
 
 
 def some_scrubber(dirty_text):
+    """
+    Used a Lookbehind and Lookahead to get rid of extra spaces.
+    
+    >>> some_scrubber('F l a t   i s   b e t t e r   t h a n   n e s t e d . ')
+    'Flat is better than nested.'
+
+    :param dirty_text: string
+    :return: string
+    """
 
     spaces = re.compile(r'''
                         (?<=\w)         # Lookbehind for letter
@@ -125,6 +123,15 @@ def some_scrubber(dirty_text):
 
 
 def mr_clean(dirty_text):
+    """
+    Added spaces between letters and spaces.  Used a list comp.
+    
+    >>> mr_clean('Sparse is better than dense')
+    ' S p a r s e   i s   b e t t e r   t h a n   d e n s e '
+    
+    :param dirty_text: string
+    :return: string
+    """
 
     split_text = [char for char in dirty_text]
     split_text.insert(0, '')
@@ -132,3 +139,27 @@ def mr_clean(dirty_text):
     final_text = join_text + ' '
 
     return final_text
+
+
+# ms_clean(dirty_text):
+#     """
+#
+#
+#     >>> ms_clean('Readability counts')
+#     'R9y c4s'
+#     """
+
+
+def strong_cleaner(dirty_text):
+    """
+    Remove the extra characters, leaving letters and ending '.'
+    
+    >>> strong_cleaner('Err@#%$ors sho@#$@#$uld nev1!$#@er pass sile&I&&*(ntly')
+    'Errors should never pass silently.'
+    
+    :param dirty_text: string
+    :return: string
+    """
+    pattern = re.compile(r'')
+    clean = \W
+
