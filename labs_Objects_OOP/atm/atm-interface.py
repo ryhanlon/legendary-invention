@@ -4,40 +4,103 @@ This file was written by Rebecca Hanlon.
 """
 
 import chalk
-#from account import
+from account import Account
 
-def welcome(choice: str) -> int:
+act = Account
+
+
+def dep_with(account: act):
+    # parameters work with welcome()
+
+    while True:
+
+        chalk.green("""
+Would you like to deposit or withdrawal from your account?
+=====*=====*=====*=====*=====*=====*=====*=====*=====*=====
+Deposit: press 1 ➤ 
+Withdrawal: press 2 ➤  
+""")
+
+        choose = int(input('Enter ➤➤ '))
+
+        if choose == 1:
+            chalk.magenta("Enter deposit amount:")
+            try:
+                new_dep = int(input('➤➤  '))
+            except ValueError:
+                pass
+
+            dep_amount = account.deposit(new_dep)
+
+            new_balance = account.get_funds()
+            chalk.magenta(f"{dep_amount} has been deposited to your account.  Your new balance is {new_balance}.")
+
+            if choose == 2:
+                chalk.magenta("Enter withdrawal amount:")
+                new_with = int(input('➤➤ '))
+                account.withdrawal(new_with)
+
+            try:
+                new_balance = account.get_funds()
+                chalk.magenta(f"{new_with} has been withdrawn from your account.  Your new balance is {new_balance}.")
+
+            except ValueError as error:
+                chalk.red(error.args[0])
+
+        return another_trans(account=account)
+
+
+def another_trans(account: act):
+
+        chalk.green("""
+Would you like another transaction?
+=====*=====*=====*=====*=====*=====*=====
+Yes: press 1 ➤ 
+No: press 2 ➤  
+""")
+
+        choose = int(input('Enter ➤➤ '))
+
+        if choose == 1:
+            dep_with(account=account)
+
+        else:
+            chalk.magenta("Thank you! Have a nice day.")
+            quit()
+
+
+def welcome(balance: int):
     """
-    Greet customer and ask if check: checking or savings
+    Greet customer, open deposit and accept first deposit.
     :return: 
     """
 
-    check_balance = int(input("""Welcome to Uptown Bank.  
-    Check your balance:
-    =====*=====*=====*=====*=====*=====*=====
-    Checking press 1 ➤  | Savings press 2 ➤ 
-    """))
+    account = None
+    while True:
 
-    get_funds(self)
+        chalk.green("""        
+        Welcome to Uptown Bank.  
+    ======*======*======*======*======
+        Open Account press 1 
+        """)
+        choose = int(input('Enter ➤➤ '))
 
-    deposit_or_withdrawal = int(input("""Your balance is {balance}.
-    Would you like to deposit or withdrawal from your account.
-    =====*=====*=====*=====*=====*=====*=====
-    Deposit press 1 ➤  | Withdrawal press 2 ➤ 
-    """))
-    # continues to deposit or withdrawal
+        if choose == 1:
+            chalk.green(f"Make your account number, enter any four numbers.")
+            choice = int(input('Enter ➤➤ '))
 
-    deposit = int(input(f"""
-    =====*=====*=====*=====*=====*=====*=====
-    Deposit into checking: press 1 ➤  
-    Deposit into savings: press 2 ➤ 
-    """))
-    deposit(self, amount: int)
+            account = Account(choice)
 
-    withdrawal = int(input(f"""
-    =====*=====*=====*=====*=====*=====*=====
-    Withdrawal from checking: press 1 ➤ 
-    Withdrawal from savings: press 2 ➤ 
-    """))
-    check_withdrawal(self, amount: int)
-    withdrawal(self, amount: int)
+            chalk.green(f"Enter the amount to deposit.")
+            new_dep = int(input('➤➤ $ '))
+            new_deposit = account.deposit(new_dep)
+
+            current_balance = account.get_funds()
+
+            chalk.magenta(f"\n${new_deposit} has been deposited into your account.  Your current balance is {current_balance}.")
+
+            another_trans(account=account)
+
+
+welcome(0)
+
