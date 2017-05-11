@@ -2,32 +2,61 @@
 This file was written Rebecca Hanlon.
 
 """
-import os
-import requests
 
-response = requests.get('http://or.water.usgs.gov/non-usgs/bes/')
 
 class RainStation:
+    def __init__(self, name: str, address: str, url: str):
+        self.name = name
+        self.address = address
+        self.url = url
+        self.rain_data = list()
 
-    def __init__(self, date: str, total: str, hours: list):
+        self.raw_text = self.scrape_station()
 
+    def scrape_station(self):
+        response = requests.get(self.url)
+        raw_text = response.text
+        return raw_text
 
+    def max_day(self):
+        number_cruncher()
+        pass
 
+    def max_year(self):
+        pass
 
-class RainDay:
+    def summary(self):
+        pass
 
-    def __init__(self, date: str, total: str, hours: list):
-        self.data = date
-        self.total = int(total)
-        self.hours = [int(h) for h in hours]
-
+    def parse_header(self):
+        name, address
+        pass
 
     def __repr__(self):
-
-        message = "{} Total: {}".format(self.date, self.total)
+        message = "RainStation(name={}, address={}, url={}".format(self.name, self.address, self.url)
         return message
 
-    def max_hour(self):
-        hour, value = max(enumerate(rain), key=lambda t: t[1])
-        return hour
+    def __str__(self):
+        message = "This is the station {}, {}.".format(self.name, self.address)
+        return message
 
+
+
+
+def compile_links():
+    BASE_URL = "https://or.water.usgs.gov/precip/"
+
+    response = requests.get(BASE_URL)
+    raw = response.text
+    soup = BeautifulSoup(raw, 'html.parser') for link
+
+
+def run_links():
+    links = complile_links
+
+    rain_stations = list()
+    for link in links:
+        rs = RainStation(url=link)
+
+if __name__ = '__main__'
+    run-links()

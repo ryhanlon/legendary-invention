@@ -4,7 +4,10 @@ This file was written by Rebecca Hanlon.  Gathers the data to find the highest t
 """
 
 import os
+import requests
 
+
+#RAIN_DIR = requests.get('http://or.water.usgs.gov/non-usgs/bes/')
 
 RAIN_DIR = '/Users/MacBookPro/Git/Projects_FSP/labs_Applied_Python/rain_data/'
 
