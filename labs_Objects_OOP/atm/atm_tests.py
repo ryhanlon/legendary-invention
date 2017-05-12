@@ -1,11 +1,11 @@
 import unittest
-from solution.ATM import Account
+from account import Account
 
 
 class TestAccountCreation(unittest.TestCase):
     def setUp(self):
-        self.test_caccount = Account(270, 'checking')
-        self.test_saccount = Account(10454, 'savings')
+        self.test_caccount = Account(270, 'checking', account_num=345654)
+        self.test_saccount = Account(10454, 'savings', account_num=436754)
 
     def test_initial_checking_account_open(self):
         self.assertNotEqual(self.test_caccount.balance, 210)
@@ -24,7 +24,7 @@ class TestAccountCreation(unittest.TestCase):
 class TestAccountOperations(TestAccountCreation):
 
     def test_get_balance(self):
-        test_account = Account(500, 'checking')
+        test_account = Account(500, 'checking', account_num=345654)
         self.assertEqual(test_account.get_funds(), 500)
         test_account.withdraw(250)
         self.assertEqual(test_account.get_funds(), 250)
@@ -37,7 +37,7 @@ class TestAccountOperations(TestAccountCreation):
             self.test_caccount.withdraw(999999999)
 
     def test_deposit(self):
-        self.assertEqual(self.test_caccount.deposit(100), 310)
+        self.assertEqual(self.test_caccount.deposit(100), 370)
 
     def test_simple_interest(self):
         pass
@@ -49,7 +49,9 @@ class TestAccountOperations(TestAccountCreation):
         self.assertFalse(self.test_caccount.get_standing())
         self.assertTrue(self.test_saccount.get_standing())
 
-'''
-class TestATMInterface(TestAccountCreation):
-    pass
-'''
+
+"""class TestATMInterface(TestAccountCreation):
+
+    pass"""
+
+
