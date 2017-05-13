@@ -1,23 +1,32 @@
-"""
+# """
+#
+# >>> validate([4, 5, 5, 6, 7, 3, 7, 5, 8, 6, 8, 9, 9, 8, 5, 5])
+# Valid!
+#
+# # step_one([6, 5, 1, 6, 4, 3, 7, 5, 1, 6, 4, 9, 3, 8, 5, 4])
+# # Invalid!
+#
+# """
 
->>> validate([4, 5, 5, 6, 7, 3, 7, 5, 8, 6, 8, 9, 9, 8, 5, 5])
-Valid!
+# 1. Slice off the last digit.  That is the **check digit**.
+# 2. Reverse the digits.
+# 3. Double every other element in the reversed list.
+# 4. Subtract nine from numbers over nine.
+# 5. Sum all values.
+# 6. Take the second digit of that sum.
+# 7. If that matches the check digit, the whole card number is valid.
 
->>> validate([6, 5, 1, 6, 4, 3, 7, 5, 1, 6, 4, 9, 3, 8, 5, 4])
-Invalid!
 
-"""
+def display(result_final=int, check_digit=int) -> str:
+
+    if int(result_final) == check_digit:
+        return 'Valid!'
+
+    else:
+        return 'Invalid!'
 
 
-def validate(account_number):
-    # Write your code here.
-
-    # 1- slice off the last digit, that is the **check digit**
-
-    check_digit = account_number.pop()
-
-    # 2 - reverse the digits
-    account_number.reverse()
+def step_three_and_four(account_number=list, check_digit=int) -> None:
 
     # 3 - double every other element in the reversed list
     # everyother = account_number[::2]
@@ -42,7 +51,37 @@ def validate(account_number):
     result_final = result_string[-1]
 
     if int(result_final) == check_digit:
-        print('Valid!')
 
-    else:
-        print('Invalid!')
+        display(result_final, check_digit)
+
+        #return result_final, check_digit
+
+    # else:
+    #     return 'Invalid!'
+
+    display(result_final, check_digit)
+
+
+def step_two(account_number=list) -> None:
+    # 2 - reverse the digits
+    account_number.reverse()
+
+    step_three_and_four(account_number, check_digit)
+
+    #return account_number
+
+
+def step_one(account_number=list) -> int:
+
+    # 1- slice off the last digit, that is the **check digit**
+
+    check_digit = account_number.pop()
+
+    step_two(account_number)
+
+    return check_digit
+
+
+
+
+step_one([4, 5, 5, 6, 7, 3, 7, 5, 8, 6, 8, 9, 9, 8, 5, 5])

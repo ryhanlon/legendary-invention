@@ -41,9 +41,9 @@ Withdrawal from savings: press 4 ➤
             chalk.magenta("Enter deposit amount:")             # Deposit to savings
             new_svgs_dep = int(input('➤➤  '))
 
-            svgs_dep_amount = account.svgs_deposit(new_svgs_dep)
+            svgs_dep_amount = account.deposit(new_svgs_dep)
 
-            svgs_new_balance = account.svgs_get_funds()
+            svgs_new_balance = account.get_funds()
             chalk.magenta(f"""{svgs_dep_amount} has been deposited to your account.  
             Your new balance is {svgs_new_balance}.""")
 
@@ -59,9 +59,9 @@ Withdrawal from savings: press 4 ➤
         elif choose == 4:
             chalk.magenta("Enter withdrawal amount:")          # Withdrawal from savings
             svgs_new_withdra = int(input('➤➤ '))
-            account.svgs_withdrawal(svgs_new_withdra)
+            account.withdrawal(svgs_new_withdra)
 
-            svgs_new_balance = account.svgs_get_funds()
+            svgs_new_balance = account.get_funds()
             chalk.magenta(f"""{svgs_new_withdra} has been withdrawn from your account.
             Your new balance is {svgs_new_balance}.""")
 
