@@ -1,0 +1,14 @@
+
+
+table, th, td {
+  margin: 20px 30px 20px 30px;
+  text-align: left;
+  border: 1px solid yellow;
+  background-color: limegreen;
+
+}
+
+th, td {
+  padding: 15px;
+
+}
