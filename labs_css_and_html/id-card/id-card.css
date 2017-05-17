@@ -1,0 +1,49 @@
+* {
+  background-color: lightyellow;
+}
+
+section {
+  border-style: inset;
+  border-radius: 10%;
+  width: 400px;
+  height: 200px;
+  background: orange;
+  margin: 100px;
+
+
+}
+
+.banner {
+  width: 395px;
+  height: 35px;
+  padding: 10px 2px 1px 2px;
+  color: #FFF7D7;
+  background: blue;
+  border-radius: 20%;
+  text-indent: 10px;
+  text-align: center;
+}
+
+img {
+  border: solid;
+  padding: 3px;
+  margin-left: 2%;
+  margin-bottom: 10%;
+  height: 50%;
+  width: 25%;
+  position: relative;
+  top: -5px;
+  bottom: 20%;
+  z-index: 1;
+}
+
+.info {
+  text-align: right;
+  position: relative;
+  bottom: 170px;
+  padding: 2px 8px;
+  background:
+
+
+
+}
