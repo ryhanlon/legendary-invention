@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,600');
+
+body, html {
+	height: 100%;
+	font-family: 'Dosis', sans-serif;
+	color: #fff;
+	margin: 0;
+}
+
+
+.btn {
+	font-size:20px;
+	background-color:#fff;
+	padding:20px;
+	color:#333;
+	border-radius: 20px;
+}
+
+.wrapper:not(.main) {
+	width: 24%;
+}
+
+h1 {
+	margin:0;
+}
+
+.wrapper {
+	height:50vh;
+	display:flex;
+	align-items:center;
+	justify-content:center;
+	min-height:250px;
+	flex-direction:column;
+	background:#00A5CF;
+	border:solid 0.5px;
+}
+
+section {
+	display:flex;
+	flex-wrap:wrap;
+	justify-content:center;
+	margin:30px 0;
+}
+
+.main {
+	background-color: #E94F37;
+	padding-top: 20px;
+}
+
+/* -------row 1, button 1 animation-------*/
+.btn-1Wrapper .btn {
+	border: solid #ffffff;
+	transition: 1s;
+}
+
+.btn-1Wrapper .btn:hover {
+	box-shadow: inset 0 0 0 5px #00A5CF;  /* (inner shadow) h v blur spred color*/
+	border: solid 3px #ffffff;
+}
+
+
+/* -------row 1, button 2 animation-------*/
+.btn-2Wrapper .btn {
+	transition: 1s;
+}
+
+.btn-2Wrapper .btn:hover {
+	border-radius: 0%;
+}
+
+
+/* -------row 1, button 3 animation-------*/
+.btn-4Wrapper .btn:hover {
+	animation: boxGrow 1s;
+}
+
+@keyframes boxGrow {
+	50%{
+		font-size: 30px;
+	}
+	100%{
+		font-size: 20px;
+	}
+}
+
+
+/* -------row 1, button 4, animation-------*/
+.btn-5Wrapper .btn {
+	transition: .1s;
+}
+
+.btn-5Wrapper .btn:hover {
+	border-style: solid;
+	border-style: dashed;
+	border-width: 3px;
+	border-color: #8B008B;
+}
+
+
+/* -------row 2, button 1, animation-------*/
+.btn-3Wrapper .btn {
+	box-shadow: 0 5px 0 #848484;   /*  blur spred color*/
+	transition: .5s;
+}
+
+.btn-3Wrapper .btn:active {
+	box-shadow: 0 3px 0 #707070;
+	transform: translateY(2px);
+}
+
+
+/* -------row 2, button 2, animation-------*/
+.btn-6Wrapper .btn {
+	box-shadow: 0 5px 7px 0px #707070;
+	transition: 1s;
+}
+
+.btn-6Wrapper .btn:active {
+	box-shadow: 0 3px 3px 0px rgba(0, 0, 0, 0.4),
+	inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);  /* adds shadow on click*/
+	transform: translationY(2px);
+}
+
+
+/* -------row 2, button 3, animation-------*/
+.btn-7Wrapper .btn {
+	border-radius: 0%;
+	transition: .5s;
+}
+
+.btn-7Wrapper .btn:hover {
+	box-shadow: 1px -1px #000,
+		2px -2px #000,
+		3px -3px #000,
+		4px -4px #000,
+		5px -5px #000;  /* add the trailing effect on the shadow*/
+	transform: translate(-10px, 10px)
+}
+
+
+/* -------row 2, button 4, animation-------*/
+.btn-8Wrapper .btn {
+	transform:rotateX(25deg);
+	transition: .5s;
+	box-shadow: 0px 8px 10px 0px rgba(0, 0, 0, 0.3),
+		inset 0px 4px 1px 1px white,
+		inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+.btn-8Wrapper .btn:hover {
+	transform:rotateX(0);
+	box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.3),
+		inset 0px 4px 1px 1px white,
+		inset 0px -3px 1px 1px rgba(204, 198, 197, 0.5);
+}
+
+
+/* -------row 3, button 1, animation-------*/
+.btn-9Wrapper .btn {
+	transition: .3s;
+}
+
+.btn-9Wrapper .btn:hover {
+	background: rgba(255, 255, 255, .5)  /* or use, opacity: 0.5; */
+}
+
+
+/* -------row 3, button 2, animation-------*/
+.btn-10Wrapper .btn {
+	transition: 1s;
+}
+
+.btn-10Wrapper .btn:hover {
+	animation: popOut 2s alternate;
+	animation-play-state: initial;
+}
+
+@keyframes popOut {
+	60% {
+		padding: 35px 10px;
+	}
+	80% {
+		padding: 10px 40px;
+		}
+	100% {
+		padding: 20px;
+	}
+}
+
+
+/* -------row 3, button 3, animation-------*/
+.btn-11Wrapper .btn:hover {
+	animation: colorFlash 2s infinite;
+}
+
+@keyframes colorFlash {
+	25% {
+		background: blue;
+	}
+	50% {
+		background: orange;
+	}
+	75% {
+		background: green;
+	}
+	100% {
+		background: purple;
+	}
+}
+
+
+/* -------row 3, button 4, animation-------*/
+.btn-12Wrapper .btn:hover {
+	animation: cornerDance 1s infinite;
+	animation-direction: alternate;
+}
+
+@keyframes cornerDance {
+	0% {
+		border-radius: 0px 20px 20px;
+	}
+	25% {
+		border-radius: 20px 0px 20px;
+	}
+	50% {
+		border-radius: 20px 20px 0px;
+	}
+	75% {
+		border-radius: 20px 20px 20px 0px;
+	}
+	100% {
+		border-radius: 0px 20px 20px;
+	}
+}
