@@ -1,0 +1,80 @@
+$topRect: linear-gradient(270deg, #2196f3, #9c27b0);
+$bottomRect: linear-gradient(270deg, #2196f3, #9c27b0);
+$frameAreas: #dfefef;
+$textHeader: #ffffff;
+$pictures: "https://visualhunt.com/photos/xl/7/flower-bouquet-bunch-daisys.jpg", "https://visualhunt.com/photos/l/7/sky-silhouette-star.jpg", "https://visualhunt.com/photos/l/7/animal-kitten-pet.jpg";
+
+@mixin flexContainer() {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin flexContainerRows() {
+  display: flex;
+  flex-direction: center;
+  justify-content: space-around;
+  padding: 0;
+  width: 100%;
+
+}
+
+
+#container{
+  @include flexContainer();
+}
+
+header {
+  @include flexContainer();
+  height: 95vh;
+  background: $topRect;
+  align-items: center;
+  background-size: 100% 100%;
+}
+
+header:hover {
+  animation-name: colorFade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+h1, h2 {
+  color: $textHeader;
+}
+
+
+@keyframes colorFade {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+@for $i from 1 through length($pictures) {
+  ul li:nth-child(#{$i}) {
+      background:url(nth($pictures, $i));
+      background-size: cover;
+      height: 25vh;
+      width: 30vw;
+      border: solid;
+      list-style: none;
+      padding: 20%;
+    }
+}
+
+.project-list div ul {
+  @include flexContainer();
+  align-items: space-around;
+  background: $frameAreas;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+
+}

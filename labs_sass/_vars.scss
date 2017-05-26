@@ -1,0 +1,20 @@
+/* for variables, the underscore in the name of the file means don't render but inject.*/
+
+/*----variables----*/
+
+$bg-color: #ee3;
+$num: 0;
+$string: 'hello';
+$colors: (1:#eee,       /* map, similar to dictionary*/
+          2: #ddd,
+          3: #333,
+          4: #cc3366,
+          5: #66cc33,
+          6: #9933cc);
+$shoes: 'heels',     /* list, list of photos */
+        'boots',
+        'tennis',
+        'running',
+        'sandals';
+$font-type: 'heading', !default;
+$photos: 'http://collphoto.jpg', '../imp/pic.png';

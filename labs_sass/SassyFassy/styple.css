@@ -1,0 +1,68 @@
+#container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 95vh;
+  background: linear-gradient(270deg, #2196f3, #9c27b0);
+  align-items: center;
+  background-size: 100% 100%; }
+
+header:hover {
+  animation-name: colorFade;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate; }
+
+h1, h2 {
+  color: #ffffff; }
+
+@keyframes colorFade {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+ul li:nth-child(1) {
+  background: url("https://visualhunt.com/photos/xl/7/flower-bouquet-bunch-daisys.jpg");
+  background-size: cover;
+  height: 25vh;
+  width: 30vw;
+  border: solid;
+  list-style: none;
+  padding: 20%; }
+
+ul li:nth-child(2) {
+  background: url("https://visualhunt.com/photos/l/7/sky-silhouette-star.jpg");
+  background-size: cover;
+  height: 25vh;
+  width: 30vw;
+  border: solid;
+  list-style: none;
+  padding: 20%; }
+
+ul li:nth-child(3) {
+  background: url("https://visualhunt.com/photos/l/7/animal-kitten-pet.jpg");
+  background-size: cover;
+  height: 25vh;
+  width: 30vw;
+  border: solid;
+  list-style: none;
+  padding: 20%; }
+
+.project-list div ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: space-around;
+  background: #dfefef;
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%; }
+
+/*# sourceMappingURL=styple.css.map */

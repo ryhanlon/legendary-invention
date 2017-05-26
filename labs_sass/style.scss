@@ -1,0 +1,101 @@
+@import 'vars';
+
+
+///* mixin  */
+//@mixin big-text($font-type) {
+//  border: solid 3px #333;
+//  background: #84DCC6;
+//  @if $font-type: true;
+// == true {
+//    font-size: 5em;
+//    color: #EF8354;
+//  } @else {
+//    font-size: 3em;
+//    color: #2F4858;
+//  }
+//}
+
+@mixin big-text($font-color) {
+  font-size: 2em;
+  border: dashed 20px;
+  color: $font-color;
+}
+
+h1 {
+  background: $bg-color;
+  @include  big-text(#333);
+}
+
+p {
+  background: $bg-color;
+}
+
+div p:nth-child(3){    /* also (odd) (even)*/
+  background: #2F4858;
+}
+
+main {
+  section {
+    padding: 2em;
+    height: 50vh;
+    width: 20vh;
+    background: #EF8354;
+    border: dashed 3px;
+  }
+  div {
+    @extend section;
+    &:hover{
+      background: #84DCC6;
+    }
+  }
+  article {
+    @extend section;
+
+  }
+}
+
+/* ----nesting----*/
+div {
+  color: #Efa354;
+  a {
+    color: #7aa61a;
+    &:before {
+      content: nth($shoes, 3);
+    }
+  }
+  p {
+    @include big-text('smalltext');
+    color: #666;
+  }
+}
+
+
+/* --each loop-- */
+@each $i in map-keys($colors) {
+  ul li:nth-child(#{$i}) {
+    $current-color: map_get($colors, $i);
+    color:$current-color;
+  }
+}
+
+/* while loop | darken  & lighten are a built-in, functions in sass    */
+@while $num < 8 {
+  .while-#{$num} {
+  background: darken($bg-color, $num + 10);
+  $num: $num + 1
+  }
+}
+
+/* for loop*/
+@for $i from 1 through length($shoes) {
+  ul {
+    background: $bg-color;
+    li:nth-child(#{$i}):before {
+      content: nth($shoes, $i);
+    }
+  }
+}
+
+
+
+

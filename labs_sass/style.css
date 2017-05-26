@@ -1,0 +1,108 @@
+/* for variables, the underscore in the name of the file means don't render but inject.*/
+/*----variables----*/
+h1 {
+  background: #ee3;
+  font-size: 2em;
+  border: dashed 20px;
+  color: #333; }
+
+p {
+  background: #ee3; }
+
+div p:nth-child(3) {
+  /* also (odd) (even)*/
+  background: #2F4858; }
+
+main section, main div, main article {
+  padding: 2em;
+  height: 50vh;
+  width: 20vh;
+  background: #EF8354;
+  border: dashed 3px; }
+main div:hover {
+  background: #84DCC6; }
+
+/* ----nesting----*/
+div {
+  color: #Efa354; }
+  div a {
+    color: #7aa61a; }
+    div a:before {
+      content: "tennis"; }
+  div p {
+    font-size: 2em;
+    border: dashed 20px;
+    color: "smalltext";
+    color: #666; }
+
+/* --each loop-- */
+ul li:nth-child(1) {
+  color: #eee; }
+
+ul li:nth-child(2) {
+  color: #ddd; }
+
+ul li:nth-child(3) {
+  color: #333; }
+
+ul li:nth-child(4) {
+  color: #cc3366; }
+
+ul li:nth-child(5) {
+  color: #66cc33; }
+
+ul li:nth-child(6) {
+  color: #9933cc; }
+
+/* while loop | darken  & lighten are a built-in, functions in sass    */
+.while-0 {
+  background: #dcdc12; }
+
+.while-1 {
+  background: #d7d712; }
+
+.while-2 {
+  background: #d2d212; }
+
+.while-3 {
+  background: #cece11; }
+
+.while-4 {
+  background: #c9c911; }
+
+.while-5 {
+  background: #c4c410; }
+
+.while-6 {
+  background: #bfbf10; }
+
+.while-7 {
+  background: #bbbb10; }
+
+/* for loop*/
+ul {
+  background: #ee3; }
+  ul li:nth-child(1):before {
+    content: "heels"; }
+
+ul {
+  background: #ee3; }
+  ul li:nth-child(2):before {
+    content: "boots"; }
+
+ul {
+  background: #ee3; }
+  ul li:nth-child(3):before {
+    content: "tennis"; }
+
+ul {
+  background: #ee3; }
+  ul li:nth-child(4):before {
+    content: "running"; }
+
+ul {
+  background: #ee3; }
+  ul li:nth-child(5):before {
+    content: "sandals"; }
+
+/*# sourceMappingURL=style.css.map */
