@@ -1,0 +1,15 @@
+.foo {
+    transition: 3s;
+    color: #8f1eb4;
+    font-size: 2em;
+
+
+}
+
+/*lclass not defined in the dom, activated through toggle class (not in htm)*/
+.move {
+    transform: translateX(500px);
+    color: #1e70bf;
+    font-size: 6em;
+    transition: 3s;
+}
