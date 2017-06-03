@@ -1,0 +1,52 @@
+#container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: rgba(70, 130, 180, 0.97);
+
+}
+
+#inner-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 45em;
+    height: 15em;
+    background: rgb(168, 200, 238);
+    border-radius: 25px;
+
+}
+
+#generator {
+    height: 50px;
+    width: 140px;
+    background-color: #9f00ff;
+
+}
+.badge {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 40em;
+    height: 10em;
+    background: rgb(255, 227, 204);
+    border-radius: 25px;
+
+
+}
+
+.info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    font-size: 16px;
+    margin: 10px 10px;
+
+}
