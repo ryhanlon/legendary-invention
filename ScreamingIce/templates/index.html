@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>LLAMAS 42, It was a nice day.  It was a good day.</h1>
+
+    <p>
+        {{ scream }}
+        {%  if request.user.is_authenticated %}
+            Hello, {{ request.user.username }}
+        {%  endif %}
+    </p>
+</body>
+</html>
