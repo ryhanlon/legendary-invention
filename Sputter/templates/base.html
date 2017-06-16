@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sputter Home</title>
+</head>
+<body>
+    {% block content %}
+        {%  for sput in sputs %}
+            <p>{{ sput.headline }}</p>
+        {% endfor %}
+        <p>It works</p>
+    {%  endblock %}
+</body>
+</html>
